@@ -16,8 +16,6 @@ public class WriteInJson {
 
         try (FileWriter file = new FileWriter("src/main/resources/playerData.json")) {
             file.write(lvlCounter.toString());
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + lvlCounter);
         } catch (Exception e) {
             System.out.println(e);
 
@@ -31,7 +29,6 @@ public class WriteInJson {
             String contents = new String((Files.readAllBytes(Paths.get(path))));
             JSONObject obj = new JSONObject(contents);
             level = obj.getInt("level");
-            System.out.println(level);
         } catch (IOException e) {
             e.printStackTrace();
         }
