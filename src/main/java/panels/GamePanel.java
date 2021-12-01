@@ -1,5 +1,6 @@
 package panels;
 
+import appearance.Images;
 import appearance.Map;
 import entities.Player;
 
@@ -28,6 +29,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
     public GamePanel()  {
         addKeyListener(this);
         setFocusable(true);
+
+        new Images();
 
         //temporary
         images = new BufferedImage[18];
