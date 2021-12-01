@@ -1,5 +1,6 @@
 package panels;
 
+import appearance.Animations;
 import appearance.Images;
 import appearance.Map;
 import entities.Player;
@@ -31,32 +32,6 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         setFocusable(true);
 
         new Images();
-
-        //temporary
-        images = new BufferedImage[18];
-
-        try {
-            images[0] = ImageIO.read(this.getClass().getResourceAsStream("/redx.png"));
-            images[1] = ImageIO.read(this.getClass().getResourceAsStream("/runr1.png"));
-            images[2] = ImageIO.read(this.getClass().getResourceAsStream("/runr2.png"));
-            images[3] = ImageIO.read(this.getClass().getResourceAsStream("/runr3.png"));
-            images[4] = ImageIO.read(this.getClass().getResourceAsStream("/runr4.png"));
-            images[5] = ImageIO.read(this.getClass().getResourceAsStream("/runl1.png"));
-            images[6] = ImageIO.read(this.getClass().getResourceAsStream("/runl2.png"));
-            images[7] = ImageIO.read(this.getClass().getResourceAsStream("/runl3.png"));
-            images[8] = ImageIO.read(this.getClass().getResourceAsStream("/runl4.png"));
-            images[9] = ImageIO.read(this.getClass().getResourceAsStream("/mel.png"));
-            images[10] = ImageIO.read(this.getClass().getResourceAsStream("/calib.png"));
-            images[11] = ImageIO.read(this.getClass().getResourceAsStream("/mer.png"));
-            images[12] = ImageIO.read(this.getClass().getResourceAsStream("/arrow_l.png"));
-            images[13] = ImageIO.read(this.getClass().getResourceAsStream("/arrow_r.png"));
-            images[14] = ImageIO.read(this.getClass().getResourceAsStream("/spike_up.png"));
-            images[15] = ImageIO.read(this.getClass().getResourceAsStream("/upr.png"));
-            images[16] = ImageIO.read(this.getClass().getResourceAsStream("/upl.png"));
-            images[17] = ImageIO.read(this.getClass().getResourceAsStream("/demo_ground.png"));
-        } catch (IOException var2) {
-            var2.printStackTrace();
-        }
 
         start();
     }
@@ -108,6 +83,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
         super.paintComponent(g);
 
         setBackground(Color.black);
+        Animations.draw(g);
         Map.draw(g);
         Player.draw(g);
     }

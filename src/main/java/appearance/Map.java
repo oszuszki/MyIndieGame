@@ -5,6 +5,7 @@ import panels.GamePanel;
 import java.awt.*;
 
 import static appearance.MapBuilding.*;
+import static appearance.Images.*;
 
 public class Map {
 
@@ -21,22 +22,22 @@ public class Map {
                         g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
                         break;*/
                     case 1:
-                    case 155:
                         g.setColor(Color.red);
                         g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
                         //g.drawImage(GamePanel.images[17], j * blockSize,i * blockSize, blockSize, blockSize, null);
                         break;
                     case 2:
-                        g.drawImage(GamePanel.images[10], j * blockSize,i * blockSize, blockSize, blockSize, null);
+                        g.setColor(Color.green);
+                        g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
                         break;
                     case 3:
-                        g.drawImage(GamePanel.images[12], arrowX1 * blockSize,arrowY1 * blockSize, blockSize, blockSize, null);
+                        g.drawImage(images[1], arrowX1 * blockSize,arrowY1 * blockSize, blockSize, blockSize, null);
                         break;
                     case 33:
-                        g.drawImage(GamePanel.images[13], arrowX2 * blockSize,arrowY2 * blockSize, blockSize, blockSize, null);
+                        g.drawImage(images[2], arrowX2 * blockSize,arrowY2 * blockSize, blockSize, blockSize, null);
                         break;
                     case 4:
-                        g.drawImage(GamePanel.images[14], j * blockSize,i * blockSize, blockSize, blockSize, null);
+                        g.drawImage(images[3], j * blockSize,i * blockSize, blockSize, blockSize, null);
                         break;
                 }
             }
