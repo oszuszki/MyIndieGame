@@ -68,7 +68,7 @@ public class Collisions {
 
             setLvlCounter(getLvlCounter() + 1);
             setNewLvl(true);
-            WriteInJson.saveData();
+            WriteInJson.saveLevelInJson();
         }
     }
 

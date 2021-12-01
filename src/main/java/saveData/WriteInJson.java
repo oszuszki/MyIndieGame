@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class WriteInJson {
-    public static void saveData() {
+    public static void saveLevelInJson() {
         JSONObject lvlCounter = new JSONObject();
         lvlCounter.put("level", MapBuilding.getLvlCounter());
 
@@ -18,11 +18,10 @@ public class WriteInJson {
             file.write(lvlCounter.toString());
         } catch (Exception e) {
             System.out.println(e);
-
         }
     }
 
-    public static int readLvl(){
+    public static int readLevelFromJson(){
         String path = "src/main/resources/playerData.json";
         int level = 0;
         try {

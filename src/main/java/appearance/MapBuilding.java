@@ -1,6 +1,6 @@
 package appearance;
 
-import static saveData.WriteInJson.readLvl;
+import static saveData.WriteInJson.readLevelFromJson;
 
 public class MapBuilding {
     public static int x;
@@ -15,7 +15,7 @@ public class MapBuilding {
     public static long movingPlatformTime1 = System.currentTimeMillis();
     public static int platformRange;
 
-    private static int lvlCounter = readLvl();
+    private static int lvlCounter = readLevelFromJson();
     private static boolean newLvl = true;
 
     public static int[][] map1 = {
