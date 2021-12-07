@@ -7,11 +7,11 @@ import java.awt.*;
 import static appearance.MapBuilding.*;
 import static appearance.Images.*;
 
-public class Map {
+public class MapAppearance {
 
     private static final int blockSize= 32;
 
-    private static void platform(Graphics g) {
+    private static void mapGraphics(Graphics g) {
         nextLvl();
 
         for (int i = 0; i < map.length; i++) {
@@ -22,8 +22,9 @@ public class Map {
                         g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
                         break;*/
                     case 1:
-                        g.setColor(Color.red);
-                        g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
+                        //g.setColor(Color.red);
+                        //g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
+                        g.drawImage(Images.images[16], j * blockSize,i * blockSize , blockSize, blockSize, null);
                         //g.drawImage(GamePanel.images[17], j * blockSize,i * blockSize, blockSize, blockSize, null);
                         break;
                     case 2:
@@ -31,13 +32,13 @@ public class Map {
                         g.drawRect(j * blockSize,i * blockSize , blockSize, blockSize);
                         break;
                     case 3:
-                        g.drawImage(images[1], arrowX1 * blockSize,arrowY1 * blockSize, blockSize, blockSize, null);
+                        g.drawImage(images[0], j * blockSize,i * blockSize, blockSize, blockSize, null);
                         break;
                     case 33:
-                        g.drawImage(images[2], arrowX2 * blockSize,arrowY2 * blockSize, blockSize, blockSize, null);
+                        g.drawImage(images[1], j * blockSize,i * blockSize, blockSize, blockSize, null);
                         break;
                     case 4:
-                        g.drawImage(images[3], j * blockSize,i * blockSize, blockSize, blockSize, null);
+                        g.drawImage(images[2], j * blockSize,i * blockSize, blockSize, blockSize, null);
                         break;
                 }
             }
@@ -46,6 +47,6 @@ public class Map {
 
     public static void draw(Graphics g) {
         //backGround(g);
-        platform(g);
+        mapGraphics(g);
     }
 }
