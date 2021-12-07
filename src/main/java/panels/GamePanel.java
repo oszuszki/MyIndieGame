@@ -2,16 +2,14 @@ package panels;
 
 import appearance.Animations;
 import appearance.Images;
-import appearance.Map;
+import appearance.MapAppearance;
 import entities.Player;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 
 public class GamePanel extends JPanel implements Runnable, KeyListener {
@@ -76,15 +74,13 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
                 skippedFrames++;
             }
         }
-
     }
 
     public void paint(Graphics g) {
         super.paintComponent(g);
-
         setBackground(Color.black);
         Animations.draw(g);
-        Map.draw(g);
+        MapAppearance.draw(g);
         Player.draw(g);
     }
 
